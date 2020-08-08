@@ -863,6 +863,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isExplored: 0
   exploredFrom: {fileID: 0}
+  isPlaceable: 1
+  towerPrefab: {fileID: 0}
 --- !u!1001 &335551948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2125,7 +2127,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.42892715, y: -0.005518065, z: 0.00262017, w: 0.90331846}
-  m_LocalPosition: {x: 26.6, y: 53.3, z: -43}
+  m_LocalPosition: {x: 26.6, y: 55.63, z: -45.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2231,6 +2233,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isExplored: 0
   exploredFrom: {fileID: 0}
+  isPlaceable: 1
+  towerPrefab: {fileID: 0}
 --- !u!1001 &1007520921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2750,10 +2754,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1538560030}
     m_Modifications:
-    - target: {fileID: 1997833492, guid: 85de91a54ac83416fa2c2cfbce964ac9, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7074901662528765593, guid: 85de91a54ac83416fa2c2cfbce964ac9,
         type: 3}
       propertyPath: m_Name
@@ -2797,7 +2797,7 @@ PrefabInstance:
     - target: {fileID: 7074901662528765594, guid: 85de91a54ac83416fa2c2cfbce964ac9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7074901662528765594, guid: 85de91a54ac83416fa2c2cfbce964ac9,
         type: 3}
@@ -2814,11 +2814,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7074901662528765595, guid: 85de91a54ac83416fa2c2cfbce964ac9,
-        type: 3}
-      propertyPath: targetEnemy
-      value: 
-      objectReference: {fileID: 288695722}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85de91a54ac83416fa2c2cfbce964ac9, type: 3}
 --- !u!1001 &1257503534
@@ -3237,6 +3232,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isExplored: 0
   exploredFrom: {fileID: 0}
+  isPlaceable: 1
+  towerPrefab: {fileID: 0}
 --- !u!4 &1426330640 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7074901662528765594, guid: 85de91a54ac83416fa2c2cfbce964ac9,
@@ -3422,6 +3419,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isExplored: 0
   exploredFrom: {fileID: 0}
+  isPlaceable: 1
+  towerPrefab: {fileID: 0}
 --- !u!1 &1538560029
 GameObject:
   m_ObjectHideFlags: 0
@@ -3449,8 +3448,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1892825092}
   - {fileID: 340218195}
+  - {fileID: 1892825092}
   - {fileID: 1426330640}
   - {fileID: 532421972}
   m_Father: {fileID: 0}
@@ -4059,6 +4058,7 @@ GameObject:
   - component: {fileID: 1808999759}
   - component: {fileID: 2973612925953911854}
   - component: {fileID: 2973612925953911857}
+  - component: {fileID: 1808999760}
   m_Layer: 0
   m_Name: 0,0
   m_TagString: Untagged
@@ -4082,6 +4082,19 @@ Transform:
   m_Father: {fileID: 614637546}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1808999760
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808999758}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: -5, z: 0}
 --- !u!1001 &1820628149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4361,7 +4374,7 @@ PrefabInstance:
     - target: {fileID: 7074901662528765594, guid: 85de91a54ac83416fa2c2cfbce964ac9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7074901662528765594, guid: 85de91a54ac83416fa2c2cfbce964ac9,
         type: 3}
@@ -5079,6 +5092,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isExplored: 0
   exploredFrom: {fileID: 0}
+  isPlaceable: 1
+  towerPrefab: {fileID: 7074901662528765595, guid: 85de91a54ac83416fa2c2cfbce964ac9,
+    type: 3}
 --- !u!23 &2973612927102186624
 MeshRenderer:
   m_ObjectHideFlags: 0

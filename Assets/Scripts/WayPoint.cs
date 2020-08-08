@@ -1,5 +1,4 @@
-﻿using System.Numerics;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +8,9 @@ public class WayPoint : MonoBehaviour
     public WayPoint exploredFrom;
     const int gridSize = 10;
     Vector2Int gridPosition;
+    public bool isPlaceable = true;
+
+    [SerializeField] Tower towerPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,14 @@ public class WayPoint : MonoBehaviour
     {
         
     }
+
+    private void OnMouseOver() {
+        if (Input.GetMouseButtonDown(0) && isPlaceable) {
+            Instantiate(towerPrefab, gameObject.transform.position, Quaternion.identity);
+            print("Mouse is over "+ gameObject.name);
+        }
+    }
+
      public Vector2Int GetGridPosition() {
         return new Vector2Int(
             Mathf.RoundToInt(transform.position.x / gridSize), 
@@ -30,10 +40,5 @@ public class WayPoint : MonoBehaviour
 
     public int GetGridSize() {
         return gridSize;
-    }
-
-    public void SetTopColor(Color color) {
-        var topMeshRender = transform.Find("Top").GetComponent<MeshRenderer>();
-        topMeshRender.material.color = color;
     }
 }
