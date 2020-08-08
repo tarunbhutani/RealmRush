@@ -28,6 +28,7 @@ public class WayPoint : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && isPlaceable) {
             Instantiate(towerPrefab, gameObject.transform.position, Quaternion.identity);
             print("Mouse is over "+ gameObject.name);
+            isPlaceable = false;
         }
     }
 
