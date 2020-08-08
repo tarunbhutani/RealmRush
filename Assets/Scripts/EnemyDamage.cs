@@ -20,7 +20,7 @@ public class EnemyDamage : MonoBehaviour
     private void ProcessHit() {
         print("Hit points are " + hitPoints);
         --hitPoints;
-        if (hitPoints <= 1) {   
+        if (hitPoints <= 0) {   
             KillEnemy();
         }
     }
