@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.Linq;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ public class PathFinder : MonoBehaviour
     Queue<WayPoint> queue = new Queue<WayPoint>();
     List<WayPoint> path = new List<WayPoint>();
     [SerializeField] WayPoint startWayPoint, endWayPoint;
-    bool isRunning =true;
+    bool isRunning = true;
     WayPoint searchCenter;
 
     Vector2Int[] directions = {
@@ -85,6 +86,7 @@ public class PathFinder : MonoBehaviour
 
     private void LoadBlocks() {
          var wayPoints = FindObjectsOfType<WayPoint>(); 
+         
          foreach (WayPoint wayPoint in wayPoints) {
              if (!grid.ContainsKey(wayPoint.GetGridPosition())) {
                  grid.Add(wayPoint.GetGridPosition(), wayPoint);
